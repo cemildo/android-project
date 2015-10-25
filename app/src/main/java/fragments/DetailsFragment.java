@@ -21,6 +21,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +59,7 @@ public class DetailsFragment extends Fragment {
         final TextView availabilityContent = (TextView) root.findViewById(R.id.availabilityText);
 
         Bundle args = getArguments();
+
         final Gadget thisGadget = (Gadget) args.getSerializable("gadget");
         priceContent.setText(thisGadget.getPrice() + ".-");
         manufacturerContent.setText(thisGadget.getManufacturer());
@@ -64,10 +67,11 @@ public class DetailsFragment extends Fragment {
         LibraryService.getReservationsForCustomer(new Callback<List<Reservation>>() {
             @Override
             public void onCompletion(List<Reservation> input) {
+                DateFormat format = new SimpleDateFormat("dd.MM.yyyy");
                 if (input.size() >= 1) {
                     for (int i = 0; i < input.size(); i++) {
                         if (thisGadget.equals(input.get(i).getGadget())) {
-                            availabilityContent.setText(input.get(i).getReservationDate() + "");
+                            availabilityContent.setText(format.format(input.get(i).getReservationDate() ));
                         }
                     }
                 }

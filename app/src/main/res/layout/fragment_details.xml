@@ -110,11 +110,10 @@
         android:layout_height="87dp"
         android:text="Reservieren"
         android:id="@+id/reservierenButton"
-        android:backgroundTint="@color/primary_material_light"
+        android:backgroundTint="@color/primary_dark"
         android:textColor="@color/background_material_light"
         android:textSize="20sp"
         android:layout_marginTop="40dp"
-        android:background="@color/primary"
         android:textColorLink="@color/white"/>
 
 </LinearLayout>
