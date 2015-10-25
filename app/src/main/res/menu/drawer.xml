@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawerHome"
+            android:checked="true"
+            android:title="@string/gadgets" />
+
+        <item
+            android:id="@+id/loans"
+            android:title="@string/ausleihen" />
+
+        <item
+            android:id="@+id/reservationen"
+            android:title="@string/reservationen" />
+
+        <item
+            android:id="@+id/drawerPlugins"
+            android:title="@string/bibliothek" />
+
+    </group>
+</menu>
